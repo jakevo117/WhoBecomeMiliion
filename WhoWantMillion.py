@@ -38,9 +38,10 @@ def play_game(keywords, questions, choice_map):
     random.shuffle(combined)
     shuffled_questions, shuffled_keywords, shuffled_choices = zip(*combined)
 
-
+    num = 1
     #loop through keyword
     for keyword, question, choice in zip(shuffled_questions, shuffled_keywords, shuffled_choices):
+        print("Question " + str(num))
         print(question)
         for idx, option in enumerate(choice, start = 1):
             print(f"{choice_map[idx]}.{option}")  
@@ -64,6 +65,7 @@ def play_game(keywords, questions, choice_map):
                     print("Correct") 
                     correct_count += 1
                     money += 600
+                    num += 1
                     print("-" * 30)
                     break
                 else:
@@ -77,7 +79,7 @@ def play_game(keywords, questions, choice_map):
             print("Congrates for receive a total of $" + str(money)) 
 
 #instruction
-print("Mesdames et messieurs, welcome to \"WHO WANTS TO BE A MILLIONAIRE? \" game")
+print("Mesdames et messieurs, welcome to \"WHO WANTS TO BE A MILLIONAIRE? \"")
 user_name = input("Can I have your name, please: ")
 print("Greetings, " + user_name)
 print("In this game you will answer five question, and you will receive $600 for each correct answer. ")
